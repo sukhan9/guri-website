@@ -55,12 +55,14 @@ const services = [
 
 ];
 const galleryImages = [
-    "frames/1_0010 (Small).png",
-    "frames/1_0020 (Small).png",
-    "frames/1_0030 (Small).png",
-    "frames/1_0040 (Small).png",
-    "frames/1_0050 (Small).png",
-    "frames/1_0060 (Small).png",
+    "gallery/photo-1.jpg",
+    "gallery/photo-2.jpg",
+    "gallery/photo-3.jpg",
+    "gallery/photo-4.jpg",
+    "gallery/photo-5.jpg",
+    "gallery/photo-6.jpg",
+    "gallery/photo-7.jpg",
+    "gallery/photo-8.jpg"
 ];
 
 
