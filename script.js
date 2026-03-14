@@ -477,7 +477,10 @@ function renderPortfolio(category) {
 
         card.innerHTML = `
             <div class="thumb-wrap ${isTall ? "aspect-tall" : "aspect-video"}">
-                <img src="${project.thumbnail}" alt="${project.title}" loading="lazy">
+                ${project.video 
+                    ? `<video src="${project.video}" autoplay loop muted playsinline class="portfolio-video"></video>` 
+                    : `<img src="${project.thumbnail}" alt="${project.title}" loading="lazy">`
+                }
                 <div class="card-overlay"></div>
                 <div class="shimmer-effect"></div>
             </div>
@@ -519,8 +522,20 @@ function initModal() {
 
 function openModal(project) {
     const backdrop = document.getElementById("projectModal");
-    document.getElementById("modalImg").src = project.thumbnail;
-    document.getElementById("modalImg").alt = project.title;
+    const modalImageContainer = document.querySelector(".modal-image");
+    
+    // Clear out the modal media
+    let existingVideo = document.getElementById("modalVideo");
+    let existingImg = document.getElementById("modalImg");
+    if(existingVideo) existingVideo.remove();
+    if(existingImg) existingImg.remove();
+    
+    // Insert either video or image
+    if (project.video) {
+        modalImageContainer.insertAdjacentHTML('afterbegin', `<video id="modalVideo" src="${project.video}" autoplay controls loop class="portfolio-video" style="border-radius:1rem 1rem 0 0; width:100%; height:100%; object-fit:cover; position:absolute; inset:0; z-index:0;"></video>`);
+    } else {
+        modalImageContainer.insertAdjacentHTML('afterbegin', `<img id="modalImg" src="${project.thumbnail}" alt="${project.title}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;">`);
+    }
     document.getElementById("modalCat").textContent = project.category;
     document.getElementById("modalTitle").textContent = project.title;
     document.getElementById("modalDesc").textContent = project.description;
@@ -530,6 +545,8 @@ function openModal(project) {
 }
 
 function closeModal() {
+    let existingVideo = document.getElementById("modalVideo");
+    if(existingVideo) { existingVideo.pause(); }
     document.getElementById("projectModal").classList.remove("active");
     document.body.style.overflow = "";
 }
