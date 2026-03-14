@@ -503,7 +503,45 @@ function renderPortfolio(category) {
             </div>
         `;
 
-        card.addEventListener("click", () => openModal(project));
+        
+        const vid = card.querySelector('video');
+        if (vid) {
+            card.addEventListener('mouseenter', () => vid.play().catch(() => {}));
+            card.addEventListener('mouseleave', () => {
+                vid.pause();
+                vid.currentTime = 0;
+            });
+
+            card.addEventListener("click", () => {
+                if (vid.requestFullscreen) {
+                    vid.requestFullscreen();
+                } else if (vid.webkitEnterFullscreen) {
+                    vid.webkitEnterFullscreen();
+                } else if (vid.webkitRequestFullscreen) {
+                    vid.webkitRequestFullscreen();
+                }
+                vid.muted = false;
+                vid.controls = true;
+                vid.play().catch(() => {});
+
+                const onExitFullscreen = () => {
+                    if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+                        vid.muted = true;
+                        vid.controls = false;
+                        vid.pause();
+                    }
+                };
+                document.addEventListener('fullscreenchange', onExitFullscreen);
+                document.addEventListener('webkitfullscreenchange', onExitFullscreen);
+                vid.addEventListener('webkitendfullscreen', () => {
+                    vid.muted = true;
+                    vid.controls = false;
+                    vid.pause();
+                });
+            });
+        } else {
+            card.addEventListener("click", () => openModal(project));
+        }
         grid.appendChild(card);
 
         // Staggered entrance
