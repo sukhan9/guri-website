@@ -1976,3 +1976,144 @@ footer {
 .project-card:hover .portfolio-video {
     transform: scale(1.05);
 }
+
+/* ═══════ GALLERY SECTION ═══════ */
+#gallery {
+    padding: 10rem 0;
+    position: relative;
+    background: linear-gradient(to bottom, var(--primary-bg) 0%, #030303 100%);
+}
+
+.gallery-container {
+    width: 100%;
+}
+
+.gallery-grid {
+    width: 100vw;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    padding: 2rem 0;
+    cursor: grab;
+    scroll-behavior: auto; /* Important for JS smooth dragging */
+}
+
+.gallery-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    padding: 1rem 2rem;
+    will-change: transform;
+}
+
+.gallery-card {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    width: 380px;
+    height: 480px;
+    flex-shrink: 0;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-card .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+    opacity: 0.6;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-card:hover .card-overlay {
+    opacity: 0.2;
+}
+
+/* ═══════ GALLERY SECTION ═══════ */
+#gallery {
+    padding: 10rem 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery-container {
+    width: 100%;
+}
+
+.gallery-grid {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 2rem 0;
+    cursor: grab;
+    scroll-behavior: auto;
+}
+
+.gallery-grid::-webkit-scrollbar {
+    display: none;
+}
+
+.gallery-track {
+    display: flex;
+    gap: 1.5rem;
+    width: max-content;
+    padding: 1rem 2rem;
+    will-change: transform;
+}
+
+.gallery-card {
+    position: relative;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    width: 340px;
+    height: 440px;
+    flex-shrink: 0;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.gallery-card:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-card .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.gallery-card:hover .card-overlay {
+    opacity: 0.2;
+}
+
+@media (max-width: 768px) {
+    .gallery-card {
+        width: 280px;
+        height: 380px;
+    }
+}

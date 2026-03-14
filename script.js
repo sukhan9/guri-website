@@ -54,6 +54,15 @@ const services = [
     },
 
 ];
+const galleryImages = [
+    "frames/1_0010 (Small).png",
+    "frames/1_0020 (Small).png",
+    "frames/1_0030 (Small).png",
+    "frames/1_0040 (Small).png",
+    "frames/1_0050 (Small).png",
+    "frames/1_0060 (Small).png",
+];
+
 
 const socialLinksData = [
     {
@@ -89,10 +98,12 @@ document.addEventListener("DOMContentLoaded", () => {
     initParticles();
     renderPortfolio("All");
     renderServices();
+    renderGallery();
 
     renderTestimonials();
     renderSocialLinks();
     initServicesScroll();
+    initGalleryScroll();
     initScrollReveal();
     initSmoothScroll();
     initModal();
@@ -654,6 +665,106 @@ function initServicesScroll() {
 }
 
 
+
+
+// ─── Gallery Rendering ──────────────────
+function renderGallery() {
+    const grid = document.getElementById("galleryGrid");
+    if (!grid) return;
+
+    const track = document.createElement("div");
+    track.className = "gallery-track";
+
+    function createCard(src) {
+        const card = document.createElement("div");
+        card.className = "gallery-card glass gold-border hover-lift";
+        card.setAttribute("data-cursor-hover", "");
+        card.innerHTML = `
+            <img src="${src}" alt="Gallery Image" loading="lazy">
+            <div class="card-overlay"></div>
+            <div class="shimmer-effect"></div>
+        `;
+        return card;
+    }
+
+    // Render original + duplicate for seamless loop
+    galleryImages.forEach(src => track.appendChild(createCard(src)));
+    galleryImages.forEach(src => track.appendChild(createCard(src)));
+
+    grid.appendChild(track);
+}
+
+// ─── Gallery Auto-Scroll ────────────────
+function initGalleryScroll() {
+    const grid = document.getElementById('galleryGrid');
+    if (!grid) return;
+
+    const AUTO_SPEED = 1;
+    let paused = false;
+    let resumeTimer = null;
+    let scrollLoopId = null;
+
+    function autoScroll() {
+        if (!paused) {
+            grid.scrollLeft += AUTO_SPEED;
+            const halfScroll = grid.scrollWidth / 2;
+            if (grid.scrollLeft >= halfScroll) {
+                grid.scrollLeft -= halfScroll;
+            }
+        }
+        scrollLoopId = requestAnimationFrame(autoScroll);
+    }
+    scrollLoopId = requestAnimationFrame(autoScroll);
+
+    function pauseAutoScroll() {
+        paused = true;
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(() => { paused = false; }, 2000);
+    }
+
+    grid.addEventListener('wheel', e => {
+        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+            e.preventDefault();
+            grid.scrollLeft += e.deltaY * 2;
+        } else {
+            grid.scrollLeft += e.deltaX * 2;
+        }
+        pauseAutoScroll();
+    }, { passive: false });
+
+    // Drag-to-scroll support
+    let isDown = false;
+    let startX;
+    let scrollLeft;
+
+    grid.addEventListener('mousedown', (e) => {
+        isDown = true;
+        grid.style.cursor = 'grabbing';
+        startX = e.pageX - grid.offsetLeft;
+        scrollLeft = grid.scrollLeft;
+        pauseAutoScroll();
+    });
+    grid.addEventListener('mouseleave', () => {
+        isDown = false;
+        grid.style.cursor = 'grab';
+    });
+    grid.addEventListener('mouseup', () => {
+        isDown = false;
+        grid.style.cursor = 'grab';
+    });
+    grid.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - grid.offsetLeft;
+        const walk = (x - startX) * 2; 
+        grid.scrollLeft = scrollLeft - walk;
+        pauseAutoScroll();
+    });
+    
+    // Touch support
+    grid.addEventListener('touchstart', () => pauseAutoScroll(), { passive: true });
+    grid.addEventListener('touchmove', () => pauseAutoScroll(), { passive: true });
+}
 
 // ─── Testimonials Rendering ─────────────
 let currentTestimonial = 0;
