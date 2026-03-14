@@ -788,7 +788,8 @@ select {
     transform: scale(1);
 }
 
-.filter-btn-preview img {
+.filter-btn-preview img,
+.filter-btn-preview video {
     width: 100%;
     height: 100%;
     object-fit: cover;
