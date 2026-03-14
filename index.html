@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GURI — Video Editor • CGI Artist • Motion Designer</title>
+    <meta name="description" content="Premium cinematic portfolio showcasing video editing, CGI/VFX, 2D &amp; 3D animation, motion graphics and graphic design. Cinematic visuals. Immersive storytelling. Next-level motion.">
+    <meta name="keywords" content="Video Editor, CGI Artist, Motion Designer, VFX, 2D Animation, 3D Animation, Motion Graphics, Graphic Design, Portfolio">
+    <meta name="author" content="GURI">
+    <meta property="og:title" content="GURI — Video Editor • CGI Artist • Motion Designer">
+    <meta property="og:description" content="Cinematic visuals. Immersive storytelling. Next-level motion.">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-inner">
+            <a href="#hero" class="nav-logo" data-cursor-hover>
+                <span class="text-gradient-gold">GURI</span>
+            </a>
+            <ul class="nav-links" id="navLinksDesktop">
+                <li><a href="#hero" data-cursor-hover>Home</a></li>
+                <li><a href="#portfolio" data-cursor-hover>Portfolio</a></li>
+                <li><a href="#services" data-cursor-hover>Services</a></li>
+
+                <li><a href="#testimonials" data-cursor-hover>Testimonials</a></li>
+                <li><a href="#contact" data-cursor-hover>Contact</a></li>
+            </ul>
+            <a href="#contact" class="nav-hire-btn nav-hire-btn-desktop" data-cursor-hover>Hire Me</a>
+            <button class="hamburger" id="hamburger" data-cursor-hover aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#hero" data-cursor-hover>Home</a>
+        <a href="#portfolio" data-cursor-hover>Portfolio</a>
+        <a href="#services" data-cursor-hover>Services</a>
+
+        <a href="#testimonials" data-cursor-hover>Testimonials</a>
+        <a href="#contact" data-cursor-hover>Contact</a>
+    </div>
+
+    <main>
+        <!-- ═══════ HERO SECTION ═══════ -->
+        <section id="hero">
+            <div class="hero-sticky">
+                <!-- Loading Overlay -->
+                <div class="loading-overlay" id="loadingOverlay">
+                    <div class="loading-bar-track">
+                        <div class="loading-bar-fill" id="loadingBar"></div>
+                    </div>
+                    <p class="loading-text">Loading cinematic experience...</p>
+                </div>
+
+                <!-- Main Frame Canvas -->
+                <canvas class="hero-canvas" id="heroCanvas"></canvas>
+
+                <!-- Dark Overlay -->
+                <div class="hero-overlay"></div>
+
+                <!-- Particle Canvas -->
+                <canvas class="particle-canvas" id="particleCanvas"></canvas>
+
+                <!-- Hero Content -->
+                <div class="hero-content" id="heroContent">
+                    <span class="hero-badge">Creative Studio</span>
+                    <h1 class="hero-title">
+                        <span>Video Editor</span>
+                        <span class="separator">•</span>
+                        <span>CGI Artist</span>
+                        <br class="br-desktop">
+                        <span class="separator separator-desktop">•</span>
+                        <span class="text-gradient-gold">Motion Designer</span>
+                    </h1>
+                    <p class="hero-subtitle">
+                        Cinematic visuals. Immersive storytelling. Next-level motion.
+                    </p>
+                    <div class="hero-cta">
+                        <a href="#portfolio" class="btn-primary gold-glow" data-cursor-hover>View Portfolio</a>
+                        <a href="#contact" class="btn-secondary" data-cursor-hover>Hire Me</a>
+                    </div>
+                </div>
+
+                <!-- Scroll Indicator -->
+                <div class="scroll-indicator" id="scrollIndicator">
+                    <span>Scroll</span>
+                    <div class="scroll-mouse">
+                        <div class="scroll-dot"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ PORTFOLIO SECTION ═══════ -->
+        <section id="portfolio">
+            <div class="portfolio-container">
+                <div class="section-heading reveal">
+                    <span class="subtitle">Portfolio</span>
+                    <h2>Selected Works</h2>
+                    <div class="heading-divider">
+                        <div class="line"></div>
+                        <div class="diamond"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="filter-bar reveal" id="filterBar">
+                    <button class="filter-btn glass active" data-category="All" data-cursor-hover>All</button>
+                    <div class="filter-btn-wrapper">
+                        <button class="filter-btn glass" data-category="Video Editing" data-cursor-hover>
+                            <span class="filter-btn-text">Video Editing</span>
+                            <div class="filter-btn-preview">
+                                <img src="gifs/VIDEO EDITING.gif" alt="Video Editing Preview" loading="lazy">
+                                <div class="preview-shimmer"></div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="filter-btn-wrapper">
+                        <button class="filter-btn glass" data-category="CGI / VFX" data-cursor-hover>
+                            <span class="filter-btn-text">CGI Ads</span>
+                            <div class="filter-btn-preview">
+                                <img src="gifs/CGI.gif" alt="CGI / VFX Preview" loading="lazy">
+                                <div class="preview-shimmer"></div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="filter-btn-wrapper">
+                        <button class="filter-btn glass" data-category="AI Automation" data-cursor-hover>
+                            <span class="filter-btn-text">AI </span>
+                            <div class="filter-btn-preview">
+                                <img src="gifs/ai.gif" alt="AI Automation Preview" loading="lazy">
+                                <div class="preview-shimmer"></div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="filter-btn-wrapper">
+                        <button class="filter-btn glass" data-category="3D Animation" data-cursor-hover>
+                            <span class="filter-btn-text">3D / VFX</span>
+                            <div class="filter-btn-preview">
+                                <img src="gifs/3D ANIMATION.gif" alt="3D Animation Preview" loading="lazy">
+                                <div class="preview-shimmer"></div>
+                            </div>
+                        </button>
+                    </div>
+                    <div class="filter-btn-wrapper">
+                        <button class="filter-btn glass" data-category="Motion Graphics" data-cursor-hover>
+                            <span class="filter-btn-text">Motion Graphics</span>
+                            <div class="filter-btn-preview">
+                                <img src="gifs/MOTION GRAPHIC.gif" alt="Motion Graphics Preview" loading="lazy">
+                                <div class="preview-shimmer"></div>
+                            </div>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Project Grid -->
+                <div class="project-grid" id="projectGrid"></div>
+            </div>
+        </section>
+
+        <!-- ═══════ SERVICES SECTION ═══════ -->
+        <section id="services">
+            <div class="services-bg-gradient"></div>
+            <div class="services-container">
+                <div class="section-heading reveal">
+                    <span class="subtitle">Services</span>
+                    <h2>We Can Do</h2>
+                    <div class="heading-divider">
+                        <div class="line"></div>
+                        <div class="diamond"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="services-grid" id="servicesGrid"></div>
+            </div>
+        </section>
+
+
+
+        <!-- ═══════ TESTIMONIALS SECTION ═══════ -->
+        <section id="testimonials">
+            <div class="testimonials-bg"></div>
+            <div class="testimonials-container">
+                <div class="section-heading reveal">
+                    <span class="subtitle">Testimonials</span>
+                    <h2>Client Voices</h2>
+                    <div class="heading-divider">
+                        <div class="line"></div>
+                        <div class="diamond"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+                <div class="testimonial-wrapper">
+                    <div class="testimonial-viewport" id="testimonialViewport"></div>
+                    <div class="testimonial-dots" id="testimonialDots"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════ CONTACT SECTION ═══════ -->
+        <section id="contact">
+            <div class="contact-deco-1"></div>
+            <div class="contact-deco-2"></div>
+            <div class="contact-container">
+                <!-- Headline -->
+                <div class="contact-headline reveal">
+                    <h2>
+                        Let's Create Something<br>
+                        <span class="text-gradient-gold">Cinematic.</span>
+                    </h2>
+                    <div class="heading-divider" style="margin-top:1.5rem;">
+                        <div class="line"></div>
+                        <div class="diamond"></div>
+                        <div class="line"></div>
+                    </div>
+                </div>
+
+                <div class="contact-grid">
+                    <!-- Form -->
+                    <div class="reveal-left">
+                        <form class="contact-form glass-strong gold-border" id="contactForm" onsubmit="return false;">
+                            <div class="form-row">
+                                <div class="form-group" style="margin-bottom:0;">
+                                    <label>Your Name</label>
+                                    <input type="text" name="name" placeholder="John Doe">
+                                </div>
+                                <div class="form-group" style="margin-bottom:0;">
+                                    <label>Email Address</label>
+                                    <input type="email" name="email" placeholder="john@example.com">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label>Subject</label>
+                                <input type="text" name="subject" placeholder="Project Inquiry">
+                            </div>
+                            <div class="form-group">
+                                <label>Message</label>
+                                <textarea name="message" rows="5" placeholder="Tell me about your project..."></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn gold-glow" data-cursor-hover>Send Message</button>
+                        </form>
+                    </div>
+                    <!-- Social Links -->
+                    <div class="social-links reveal-right" id="socialLinks"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ═══════ FOOTER ═══════ -->
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <h3 class="text-gradient-gold">GURI</h3>
+                    <p>Cinematic visuals. Immersive storytelling. Next-level motion. Crafting premium visual experiences for brands worldwide.</p>
+                </div>
+                <div class="footer-nav">
+                    <h4>Navigation</h4>
+                    <ul class="footer-nav-links">
+                        <li><a href="#portfolio" data-cursor-hover>Portfolio</a></li>
+                        <li><a href="#services" data-cursor-hover>Services</a></li>
+
+                        <li><a href="#testimonials" data-cursor-hover>Testimonials</a></li>
+                        <li><a href="#contact" data-cursor-hover>Contact</a></li>
+                        <li><a href="#hero" data-cursor-hover>Home</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Follow</h4>
+                    <div class="footer-social-links">
+                        <a href="#" class="social-circle glass gold-border" data-cursor-hover>IG</a>
+                        <a href="#" class="social-circle glass gold-border" data-cursor-hover>Be</a>
+                        <a href="#" class="social-circle glass gold-border" data-cursor-hover>YT</a>
+                        <a href="#" class="social-circle glass gold-border" data-cursor-hover>Vi</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="year"></span> GURI. All rights reserved.</p>
+                <p class="credits">Crafted with precision &amp; passion</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Project Modal -->
+    <div class="modal-backdrop" id="projectModal">
+        <div class="modal-content glass-strong gold-border" id="modalContent">
+            <button class="modal-close glass" id="modalClose" data-cursor-hover>✕</button>
+            <div class="modal-image">
+                <img id="modalImg" src="" alt="">
+                <div class="gradient-overlay"></div>
+            </div>
+            <div class="modal-body">
+                <span class="cat" id="modalCat"></span>
+                <h2 id="modalTitle"></h2>
+                <p id="modalDesc"></p>
+                <div class="tags" id="modalTags"></div>
+                <button class="view-btn" data-cursor-hover>View Full Project</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
