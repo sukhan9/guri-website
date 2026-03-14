@@ -1,3 +1,37 @@
+
+function preventVerticalTouchScroll(element) {
+    if (!element) return;
+    let startY = 0;
+    let startX = 0;
+    let isScrolling = false;
+
+    element.addEventListener('touchstart', (e) => {
+        const touch = e.touches[0];
+        startY = touch.clientY;
+        startX = touch.clientX;
+        isScrolling = false;
+    }, { passive: true });
+
+    element.addEventListener('touchmove', (e) => {
+        if (isScrolling) return; // a decision has been made, don't re-evaluate
+
+        const touch = e.touches[0];
+        const deltaY = Math.abs(touch.clientY - startY);
+        const deltaX = Math.abs(touch.clientX - startX);
+
+        // If the user has moved more than a few pixels, decide the scroll direction
+        if (deltaY > 5 || deltaX > 5) {
+            if (deltaY > deltaX) {
+                // It's a vertical scroll, allow it to happen on the page
+                isScrolling = true;
+            } else {
+                // It's a horizontal scroll, prevent the page from scrolling vertically
+                e.preventDefault();
+                isScrolling = true;
+            }
+        }
+    }, { passive: false });
+}
 /* ═══════════════════════════════════════════
    GURI Portfolio — Pure JavaScript
    ═══════════════════════════════════════════ */
@@ -679,6 +713,8 @@ function initServicesScroll() {
             pauseAutoScroll();
         }
     }, { passive: false });
+    // Prevent vertical scroll on touch
+    preventVerticalTouchScroll(grid);
 
     // ── Cursor drag to scroll (fast) ──
     let isDragging = false;
@@ -778,6 +814,8 @@ function initGalleryScroll() {
         }
         pauseAutoScroll();
     }, { passive: false });
+    // Prevent vertical scroll on touch
+    preventVerticalTouchScroll(grid);
 
     // Drag-to-scroll support
     let isDown = false;
