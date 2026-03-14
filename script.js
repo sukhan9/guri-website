@@ -489,7 +489,7 @@ function renderPortfolio(category) {
         card.innerHTML = `
             <div class="thumb-wrap ${isTall ? "aspect-tall" : "aspect-video"}">
                 ${project.video 
-                    ? `<video src="${project.video}" autoplay loop muted playsinline class="portfolio-video"></video>` 
+                    ? `<video src="${project.video}" loop muted playsinline class="portfolio-video"></video>` 
                     : `<img src="${project.thumbnail}" alt="${project.title}" loading="lazy">`
                 }
                 <div class="card-overlay"></div>
@@ -518,7 +518,14 @@ function renderPortfolio(category) {
 // Filter button clicks
 document.getElementById("filterBar").addEventListener("click", e => {
     const btn = e.target.closest(".filter-btn");
-    if (btn) renderPortfolio(btn.dataset.category);
+    if (btn) {
+        renderPortfolio(btn.dataset.category);
+        const wrapper = btn.closest(".filter-btn-wrapper");
+        if (wrapper) {
+            wrapper.classList.remove('is-hovered');
+            btn.style.transform = '';
+        }
+    }
 });
 
 // ─── Modal ──────────────────────────────
@@ -543,7 +550,7 @@ function openModal(project) {
     
     // Insert either video or image
     if (project.video) {
-        modalImageContainer.insertAdjacentHTML('afterbegin', `<video id="modalVideo" src="${project.video}" autoplay controls loop class="portfolio-video" style="border-radius:1rem 1rem 0 0; width:100%; height:100%; object-fit:cover; position:absolute; inset:0; z-index:0;"></video>`);
+        modalImageContainer.insertAdjacentHTML('afterbegin', `<video id="modalVideo" src="${project.video}" controls loop class="portfolio-video" style="border-radius:1rem 1rem 0 0; width:100%; height:100%; object-fit:cover; position:absolute; inset:0; z-index:0;"></video>`);
     } else {
         modalImageContainer.insertAdjacentHTML('afterbegin', `<img id="modalImg" src="${project.thumbnail}" alt="${project.title}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; z-index:0;">`);
     }

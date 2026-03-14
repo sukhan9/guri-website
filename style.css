@@ -735,9 +735,9 @@ select {
 
 /* ── Hover State — Scale up + Glow ── */
 .filter-btn-wrapper.is-hovered .filter-btn {
-    transform: scale(1.4);
-    min-width: 160px;
-    height: 100px;
+    transform: scale(1.1);
+    min-width: 130px;
+    height: 70px;
     border-radius: 18px;
     border-color: rgba(212, 175, 55, 0.45);
     box-shadow:
@@ -761,7 +761,7 @@ select {
 
 .filter-btn-wrapper.is-hovered .filter-btn-text {
     opacity: 1;
-    transform: translateY(18px) scale(0.85);
+    transform: translateY(12px) scale(0.85);
     color: #fff;
     text-shadow: 0 1px 6px rgba(0, 0, 0, 0.8), 0 0 12px rgba(0, 0, 0, 0.5);
     font-weight: 700;
