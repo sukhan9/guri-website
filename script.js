@@ -949,3 +949,23 @@ function initFilterPopups() {
     });
 }
 
+
+// ─── Contact Form WhatsApp Integration ──
+const contactForm = document.getElementById("contactForm");
+if (contactForm) {
+    contactForm.removeAttribute("onsubmit");
+    contactForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const name = this.name.value.trim() || "Someone";
+        const email = this.email.value.trim() || "Not provided";
+        const subject = this.subject.value.trim() || "Inquiry from Website";
+        const message = this.message.value.trim() || "I would like to discuss a project with you.";
+
+        const text = `Hi GURI, \n\nMy name is *${name}*.\n*Email:* ${email}\n*Subject:* ${subject}\n\n*Message:*\n${message}`;
+        const encodedText = encodeURIComponent(text);
+        
+        // Target WhatsApp number: +91 6280 374 658
+        const waUrl = `https://wa.me/916280374658?text=${encodedText}`;
+        window.open(waUrl, '_blank');
+    });
+}
