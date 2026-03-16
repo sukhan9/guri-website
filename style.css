@@ -1191,6 +1191,7 @@ select {
     overflow-x: auto;
     overflow-y: hidden;
     width: 100%;
+    touch-action: pan-x;
     -webkit-overflow-scrolling: touch;
     cursor: grab;
     /* hide scrollbar */
@@ -2065,6 +2066,8 @@ footer {
     padding: 2rem 0;
     cursor: grab;
     scroll-behavior: auto;
+    touch-action: pan-x;
+   
 }
 
 .gallery-grid::-webkit-scrollbar {
@@ -2121,7 +2124,7 @@ footer {
 
 /* Brand Logo (PNG) Styling */
 .brand-logo {
-    height: 40px; /* Adjust height based on your image proportions */
+    height: 60px; /* Adjust height based on your image proportions */
     width: auto;
     object-fit: contain;
     transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease;

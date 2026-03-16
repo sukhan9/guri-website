@@ -102,23 +102,22 @@ const galleryImages = [
 
 const socialLinksData = [
     {
-        name: "Email", href: "mailto:hello@guri.studio", label: "hello@guri.studio",
+        name: "Email", href: "mailto:teamgurrmation@gmail.com", label: "teamgurrmation@gmail.com",
         icon: `<svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 4L12 13L22 4" stroke="currentColor" stroke-width="1.5"/></svg>`
     },
     {
-        name: "Instagram", href: "https://instagram.com", label: "@guri.studio",
+        name: "Instagram", href: "https://instagram.com", label: "gurrumationstudio",
         icon: `<svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="1.5"/><circle cx="18" cy="6" r="1.5" fill="currentColor"/></svg>`
     },
+    
     {
-        name: "Behance", href: "https://behance.net", label: "behance.net/guri",
-        icon: `<svg viewBox="0 0 24 24" fill="none"><path d="M3 12H10C11.6569 12 13 10.6569 13 9C13 7.34315 11.6569 6 10 6H3V12Z" stroke="currentColor" stroke-width="1.5"/><path d="M3 12H11C12.6569 12 14 13.3431 14 15C14 16.6569 12.6569 18 11 18H3V12Z" stroke="currentColor" stroke-width="1.5"/><path d="M16 14H22M16 10C16 10 16 6 19 6C22 6 22 10 22 10V14" stroke="currentColor" stroke-width="1.5"/></svg>`
+        name: "Linkedin", href: "https://linkedin.com", label: "linkedin.com/in/gurrumation-studio-a03b17354",
+        icon: `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg>`
     },
     {
-        name: "YouTube", href: "https://youtube.com", label: "YouTube Channel",
-        icon: `<svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="4" stroke="currentColor" stroke-width="1.5"/><polygon points="10,8 10,16 16,12" fill="currentColor" opacity="0.8"/></svg>`
-    },
-    {
-        name: "WhatsApp", href: "https://wa.me/1234567890", label: "+1 234 567 890",
+        name: "WhatsApp", href: "https://wa.me/6280374658", label: "+91 6280374658",
         icon: `<svg viewBox="0 0 24 24" fill="none"><path d="M12 2C6.48 2 2 6.48 2 12C2 13.85 2.5 15.55 3.35 17L2 22L7.15 20.7C8.5 21.45 10.2 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" stroke="currentColor" stroke-width="1.5"/><path d="M8 10C8 10 8.5 13 10.5 15C12.5 17 15 17 15 17L16 15L14 13.5L13 14.5C13 14.5 11 13 10 11L11 10L9.5 8L8 10Z" fill="currentColor" opacity="0.6"/></svg>`
     },
 ];
@@ -724,7 +723,7 @@ function initServicesScroll() {
         }
     }, { passive: false });
     // Prevent vertical scroll on touch
-    preventVerticalTouchScroll(grid);
+    
 
     // ── Cursor drag to scroll (fast) ──
     let isDragging = false;
@@ -825,7 +824,7 @@ function initGalleryScroll() {
         pauseAutoScroll();
     }, { passive: false });
     // Prevent vertical scroll on touch
-    preventVerticalTouchScroll(grid);
+    
 
     // Drag-to-scroll support
     let isDown = false;
@@ -838,7 +837,7 @@ function initGalleryScroll() {
         startX = e.pageX - grid.offsetLeft;
         scrollLeft = grid.scrollLeft;
         pauseAutoScroll();
-    });
+    }); 
     grid.addEventListener('mouseleave', () => {
         isDown = false;
         grid.style.cursor = 'grab';
@@ -846,7 +845,7 @@ function initGalleryScroll() {
     grid.addEventListener('mouseup', () => {
         isDown = false;
         grid.style.cursor = 'grab';
-    });
+    }); 
     grid.addEventListener('mousemove', (e) => {
         if (!isDown) return;
         e.preventDefault();
@@ -854,7 +853,7 @@ function initGalleryScroll() {
         const walk = (x - startX) * 2; 
         grid.scrollLeft = scrollLeft - walk;
         pauseAutoScroll();
-    });
+    }); 
     
     // Touch support
     grid.addEventListener('touchstart', () => pauseAutoScroll(), { passive: true });
@@ -1011,7 +1010,7 @@ if (contactForm) {
         const subject = this.subject.value.trim() || "Inquiry from Website";
         const message = this.message.value.trim() || "I would like to discuss a project with you.";
 
-        const text = `Hi GURI, \n\nMy name is *${name}*.\n*Email:* ${email}\n*Subject:* ${subject}\n\n*Message:*\n${message}`;
+        const text = `Hi GURRU, \n\nMy name is *${name}*.\n*Email:* ${email}\n*Subject:* ${subject}\n\n*Message:*\n${message}`;
         const encodedText = encodeURIComponent(text);
         
         // Target WhatsApp number: +91 6280 374 658
