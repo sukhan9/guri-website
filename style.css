@@ -2118,3 +2118,16 @@ footer {
         height: 380px;
     }
 }
+
+/* Brand Logo (PNG) Styling */
+.brand-logo {
+    height: 40px; /* Adjust height based on your image proportions */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease;
+}
+
+.nav-logo:hover .brand-logo {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.4));
+}
