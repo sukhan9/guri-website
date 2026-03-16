@@ -58,11 +58,11 @@ const projects = [
 ];
 
 const testimonials = [
-    { id: 1, name: "Alexander Pierce", role: "Creative Director", company: "Nova Studios", feedback: "Absolutely phenomenal work. The CGI sequences exceeded every expectation. A true visionary who understands cinematic storytelling at its core.", rating: 5 },
-    { id: 2, name: "Sofia Martinez", role: "Brand Manager", company: "Luxe Cosmetics", feedback: "The motion graphics elevated our brand launch to an entirely new level. Stunning attention to detail and flawless execution from start to finish.", rating: 5 },
+    { id: 1, name: "Pavitar Lasoi, T Kay", role: "Creative Director", company: "Nova Studios", feedback: "“Working with Gurrunation Studio was an amazing experience. They handled the 3D visuals and VFX for my song perfectly. The final result looked cinematic and really elevated the entire music video. Highly recommended for anyone looking for creative visual work.”", rating: 5 },
+    { id: 2, name: "Sofia Martinez", role: "Brand Manager", company: "Villager Studio", feedback: "Gurrumation Studio did an incredible job creating 3D visuals for Villager Studio. The visuals looked modern, creative, and really helped showcase our clothing brand in a unique way. We loved the final result.", rating: 5 },
     { id: 3, name: "James Okafor", role: "Film Producer", company: "Prism Pictures", feedback: "Working with Guri was a game-changer for our project. The editing pace, color grading, and VFX integration were world-class. Highly recommended.", rating: 5 },
     { id: 4, name: "Elena Rossi", role: "Marketing Director", company: "Vertex Agency", feedback: "The 3D animations brought our product visualization to life in ways we never imagined. Incredible talent and professionalism throughout.", rating: 5 },
-    { id: 5, name: "David Chen", role: "CEO", company: "TechFlow Inc.", feedback: "From concept to final delivery, the graphic design and animation work was exceptional. Our brand identity has never looked better.", rating: 5 },
+    { id: 5, name: "", role: "", company: "Starbucks.", feedback: "We collaborated with Gurrumation Studio for motion graphics, and the results were fantastic. The visuals were modern, smooth, and highly engaging. Their team showed great creativity and professionalism throughout the project.", rating: 5 },
 ];
 
 const services = [
@@ -714,14 +714,7 @@ function initServicesScroll() {
         resumeTimer = setTimeout(() => { paused = false; }, 2000);
     }
 
-    // ── Mouse wheel → horizontal scroll (fast) ──
-    grid.addEventListener('wheel', e => {
-        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-            e.preventDefault();
-            grid.scrollLeft += e.deltaY * 2;
-            pauseAutoScroll();
-        }
-    }, { passive: false });
+    
     // Prevent vertical scroll on touch
     
 
@@ -814,15 +807,7 @@ function initGalleryScroll() {
         resumeTimer = setTimeout(() => { paused = false; }, 2000);
     }
 
-    grid.addEventListener('wheel', e => {
-        if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
-            e.preventDefault();
-            grid.scrollLeft += e.deltaY * 2;
-        } else {
-            grid.scrollLeft += e.deltaX * 2;
-        }
-        pauseAutoScroll();
-    }, { passive: false });
+   
     // Prevent vertical scroll on touch
     
 
