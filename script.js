@@ -594,10 +594,20 @@ document.getElementById("filterBar").addEventListener("click", e => {
     const btn = e.target.closest(".filter-btn");
     if (btn) {
         renderPortfolio(btn.dataset.category);
+        
+        // On mobile, if we tap it, we want to see the GIF. 
+        // We will remove the 'is-hovered' class from ALL other wrappers so only the tapped one stays open.
+        const wrappers = document.querySelectorAll('.filter-btn-wrapper');
+        wrappers.forEach(w => {
+            if (w !== btn.closest('.filter-btn-wrapper')) {
+                w.classList.remove('is-hovered');
+            }
+        });
+        
+        // Toggle the clicked one
         const wrapper = btn.closest(".filter-btn-wrapper");
         if (wrapper) {
-            wrapper.classList.remove('is-hovered');
-            btn.style.transform = '';
+            wrapper.classList.add('is-hovered');
         }
     }
 });
@@ -953,37 +963,39 @@ function initSmoothScroll() {
 // ─── Filter Button Hover — Cinematic Interaction ─────────
 function initFilterPopups() {
     const wrappers = document.querySelectorAll('.filter-btn-wrapper');
+    const isTouch = ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
 
     wrappers.forEach(wrapper => {
         const btn = wrapper.querySelector('.filter-btn');
         if (!btn) return;
 
-        // ── Hover enter: add cinematic class ──
-        wrapper.addEventListener('mouseenter', () => {
-            wrapper.classList.add('is-hovered');
-        });
+        if (isTouch) {
+            // Tapping outside closes
+            document.addEventListener('touchstart', e => {
+                if (!e.target.closest('.filter-btn-wrapper')) {
+                    wrapper.classList.remove('is-hovered');
+                    btn.style.transform = '';
+                }
+            }, { passive: true });
+        } else {
+            wrapper.addEventListener('mouseenter', () => wrapper.classList.add('is-hovered'));
+            wrapper.addEventListener('mouseleave', () => {
+                wrapper.classList.remove('is-hovered');
+                btn.style.transform = '';
+            });
+            wrapper.addEventListener('mousemove', e => {
+                const rect = wrapper.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                const offsetX = (e.clientX - centerX) / (rect.width / 2);
+                const offsetY = (e.clientY - centerY) / (rect.height / 2);
 
-        // ── Hover leave: remove cinematic class + reset magnet ──
-        wrapper.addEventListener('mouseleave', () => {
-            wrapper.classList.remove('is-hovered');
-            btn.style.transform = '';
-        });
-
-        // ── Cursor magnet effect (subtle shift follows cursor) ──
-        wrapper.addEventListener('mousemove', e => {
-            const rect = wrapper.getBoundingClientRect();
-            const centerX = rect.left + rect.width / 2;
-            const centerY = rect.top + rect.height / 2;
-            const offsetX = (e.clientX - centerX) / (rect.width / 2);
-            const offsetY = (e.clientY - centerY) / (rect.height / 2);
-
-            // Smaller magnet shift since button is scaled up
-            const isHovered = wrapper.classList.contains('is-hovered');
-            const maxShift = isHovered ? 3 : 4;
-            const scaleVal = isHovered ? 1.4 : 1;
-
-            btn.style.transform = `scale(${scaleVal}) translate(${offsetX * maxShift}px, ${offsetY * maxShift}px)`;
-        });
+                const isHovered = wrapper.classList.contains('is-hovered');
+                const maxShift = isHovered ? 3 : 4;
+                const scaleVal = isHovered ? 1.1 : 1;
+                btn.style.transform = `scale(${scaleVal}) translate(${offsetX * maxShift}px, ${offsetY * maxShift}px)`;
+            });
+        }
     });
 }
 
