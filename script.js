@@ -38,31 +38,30 @@ function preventVerticalTouchScroll(element) {
 
 // ─── Data ───────────────────────────────
 const projects = [
-    { id: 1, title: "VE1", category: "Video Editing", description: "Professional video editing with cinematic pacing and seamless transitions.", thumbnail: "frames/1_0026 (Small).png", video: "Video Editing/VE1.mp4", tags: ["Premiere Pro", "DaVinci Resolve"] },
-    { id: 2, title: "VE2", category: "Video Editing", description: "Dynamic video edit showcasing precision cuts and polished color grading.", thumbnail: "frames/1_0036 (Small).png", video: "Video Editing/VE2.mp4", tags: ["Premiere Pro", "After Effects"] },
-    { id: 3, title: "VE3", category: "Video Editing", description: "Cinematic showreel capturing golden hour footage with precisely timed cuts and sound design.", thumbnail: "frames/1_0046 (Small).png", video: "Video Editing/VE3.mp4", tags: ["Premiere Pro", "After Effects"] },
+    { id: 1, title: "", category: "Video Editing", description: "Professional video editing with cinematic pacing and seamless transitions.", thumbnail: "frames/1_0026 (Small).png", video: "Video Editing/VE1.mp4", tags: ["Premiere Pro", "DaVinci Resolve"] },
+    { id: 2, title: "", category: "Video Editing", description: "Dynamic video edit showcasing precision cuts and polished color grading.", thumbnail: "frames/1_0036 (Small).png", video: "Video Editing/VE2.mp4", tags: ["Premiere Pro", "After Effects"] },
+    { id: 3, title: "", category: "Video Editing", description: "Cinematic showreel capturing golden hour footage with precisely timed cuts and sound design.", thumbnail: "frames/1_0046 (Small).png", video: "Video Editing/VE3.mp4", tags: ["Premiere Pro", "After Effects"] },
     { id: 4, title: "Dark Fantasy", category: "CGI / VFX", description: "A jaw-dropping dark fantasy CGI ad with photorealistic environments and cinematic lighting.", thumbnail: "frames/1_0056 (Small).png", video: "CGI ADS/Dark Fantasy.mp4", tags: ["Cinema 4D", "After Effects", "Octane Render"] },
-    { id: 5, title: "Mc D Burger", category: "CGI / VFX", description: "Mouthwatering CGI product visualization for a burger commercial with realistic textures.", thumbnail: "frames/1_0066 (Small).png", video: "CGI ADS/Mc D Burger.mp4", tags: ["Cinema 4D", "Octane Render"] },
+    { id: 5, title: "Mc Donalds Burger", category: "CGI / VFX", description: "Mouthwatering CGI product visualization for a burger commercial with realistic textures.", thumbnail: "frames/1_0066 (Small).png", video: "CGI ADS/Mc D Burger.mp4", tags: ["Cinema 4D", "Octane Render"] },
     { id: 6, title: "Superdonuts Rakhi Special", category: "CGI / VFX", description: "Festive CGI advertisement for Superdonuts with vibrant visuals and celebration themes.", thumbnail: "frames/1_0070 (Small).png", video: "CGI ADS/Superdonuts Rakhi special.mp4", tags: ["Blender", "After Effects"] },
     { id: 7, title: "Superdonuts", category: "CGI / VFX", description: "Premium CGI product ad showcasing delicious donuts with photorealistic detail.", thumbnail: "frames/1_0076 (Small).png", video: "CGI ADS/superdonuts.mp4", tags: ["Cinema 4D", "Octane Render"] },
     { id: 8, title: "Villager Studio", category: "CGI / VFX", description: "Creative CGI ad production for Villager Studio with stunning visual effects.", thumbnail: "frames/1_0080 (Small).png", video: "CGI ADS/villager studio.mp4", tags: ["Houdini", "Nuke", "After Effects"] },
-    { id: 9, title: "Aujla Reel", category: "3D Animation", description: "High-energy 3D VFX reel with dynamic camera movements and photorealistic rendering.", thumbnail: "frames/1_0086 (Small).png", video: "3D VFX/aujla reel.mp4", tags: ["Blender", "Cinema 4D"] },
-    { id: 10, title: "Aujla", category: "3D Animation", description: "Cinematic 3D VFX project with immersive storytelling and stunning visuals.", thumbnail: "frames/1_0090 (Small).png", video: "3D VFX/aujla.mp4", tags: ["Blender", "Unreal Engine"] },
+    { id: 9, title: "Karan Aujla", category: "3D Animation", description: "High-energy 3D VFX reel with dynamic camera movements and photorealistic rendering.", thumbnail: "frames/1_0086 (Small).png", video: "3D VFX/aujla reel.mp4", tags: ["Blender", "Cinema 4D"] },
+    { id: 10, title: "Karan Aujla", category: "3D Animation", description: "Cinematic 3D VFX project with immersive storytelling and stunning visuals.", thumbnail: "frames/1_0090 (Small).png", video: "3D VFX/aujla.mp4", tags: ["Blender", "Unreal Engine"] },
     { id: 11, title: "Jashan Dhanna", category: "3D Animation", description: "Spectacular 3D VFX production with advanced particle simulations and dynamic lighting.", thumbnail: "frames/1_0096 (Small).png", video: "3D VFX/jashan dhanna.MP4", tags: ["Cinema 4D", "After Effects"] },
     { id: 12, title: "War Tkay", category: "3D Animation", description: "Action-packed 3D VFX sequence with explosive effects and cinematic composition.", thumbnail: "frames/1_0100 (Small).png", video: "3D VFX/war tkay.mp4", tags: ["Houdini", "Nuke"] },
-    { id: 13, title: "Video Project 4", category: "Motion Graphics", description: "Dynamic motion graphics with sleek typography, infographics, and animated brand storytelling.", thumbnail: "frames/1_0030 (Small).png", video: "Motion Graphics/Video Project 4.mp4", tags: ["After Effects", "Premiere Pro"] },
-    { id: 14, title: "AI Generated Art", category: "AI Automation", description: "Cinematic, photorealistic AI-generated video featuring traditional Indian attire and stylized storytelling.", thumbnail: "frames/1_0040 (Small).png", video: "Video Editing/AI_Video_1.mp4", tags: ["Midjourney", "Runway Gen-2", "AI Video"] },
-    { id: 15, title: "Priceless Joy", category: "AI Automation", description: "A heartwarming paper-cutout style AI animation conveying that happiness doesn't always need a price tag.", thumbnail: "frames/1_0050 (Small).png", video: "Video Editing/AI_Video_2.mp4", tags: ["AI Animation", "Storytelling", "ComfyUI"] },
-    { id: 16, title: "Cinematic Ethereal Portrait", category: "AI Automation", description: "Stunning cinematic AI-generated montage featuring elegant traditional attire and photorealistic details.", thumbnail: "frames/1_0060 (Small).png", video: "Video Editing/AI_Video_3.mp4", tags: ["AI Portrait", "Cinematic", "Midjourney"] },
-    { id: 17, title: "SynthEdit AI", category: "AI Automation", description: "AI-driven video editing assistant that auto-generates cuts, transitions, and color grades based on mood analysis.", thumbnail: "frames/1_0016 (Small).png", tags: ["Runway ML", "After Effects", "Python"] },
+    { id: 13, title: "Starbucks", category: "Motion Graphics", description: "Dynamic motion graphics with sleek typography, infographics, and animated brand storytelling.", thumbnail: "frames/1_0030 (Small).png", video: "Motion Graphics/Video Project 5.mp4", tags: ["After Effects", "Premiere Pro"] },
+    { id: 14, title: "Priceless Joy", category: "AI Automation", description: "Cinematic, photorealistic AI-generated video featuring traditional Indian attire and stylized storytelling.", thumbnail: "frames/1_0040 (Small).png", video: "Video Editing/AI_Video_1.mp4", tags: ["Midjourney", "Runway Gen-2", "AI Video"] },
+    { id: 15, title: "AI Ekam Sudhar", category: "AI Automation", description: "A heartwarming paper-cutout style AI animation conveying that happiness doesn't always need a price tag.", thumbnail: "frames/1_0050 (Small).png", video: "Video Editing/AI_Video_2.mp4", tags: ["AI Animation", "Storytelling", "ComfyUI"] },
+    
 ];
 
 const testimonials = [
-    { id: 1, name: "Pavitar Lasoi, T Kay", role: "Creative Director", company: "Nova Studios", feedback: "“Working with Gurrunation Studio was an amazing experience. They handled the 3D visuals and VFX for my song perfectly. The final result looked cinematic and really elevated the entire music video. Highly recommended for anyone looking for creative visual work.”", rating: 5 },
-    { id: 2, name: "Sofia Martinez", role: "Brand Manager", company: "Villager Studio", feedback: "Gurrumation Studio did an incredible job creating 3D visuals for Villager Studio. The visuals looked modern, creative, and really helped showcase our clothing brand in a unique way. We loved the final result.", rating: 5 },
-    { id: 3, name: "James Okafor", role: "Film Producer", company: "Prism Pictures", feedback: "Working with Guri was a game-changer for our project. The editing pace, color grading, and VFX integration were world-class. Highly recommended.", rating: 5 },
-    { id: 4, name: "Elena Rossi", role: "Marketing Director", company: "Vertex Agency", feedback: "The 3D animations brought our product visualization to life in ways we never imagined. Incredible talent and professionalism throughout.", rating: 5 },
-    { id: 5, name: "", role: "", company: "Starbucks.", feedback: "We collaborated with Gurrumation Studio for motion graphics, and the results were fantastic. The visuals were modern, smooth, and highly engaging. Their team showed great creativity and professionalism throughout the project.", rating: 5 },
+    { id: 1, name: "Pavitar Lasoi", role: "Singer", company: "", feedback: "“Working with Gurrunation Studio was an amazing experience. They handled the 3D visuals and VFX for my song perfectly. The final result looked cinematic and really elevated the entire music video. Highly recommended for anyone looking for creative visual work.”", rating: 5 },
+    { id: 2, name: "Jaspal Singh", role: "CEO", company: "Villager Studio", feedback: "Gurrumation Studio did an incredible job creating 3D visuals for Villager Studio. The visuals looked modern, creative, and really helped showcase our clothing brand in a unique way. We loved the final result.", rating: 4 },
+    { id: 3, name: "T Kay", role: "Singer", company: "", feedback: "Working with Gurrunation Studio was an amazing experience. They handled the 3D visuals and VFX for my song perfectly. The final result looked cinematic and really elevated the entire music video. Highly recommended for anyone looking for creative visual work.", rating: 5 },
+    { id: 4, name: "Ekam Sudhar", role: "Singer", company: "", feedback: "The team at Gurrumation Studio is highly talented. They delivered high-quality 3D visuals for my song that looked modern, unique, and visually powerful.", rating: 5 },
+    { id: 5, name: "", role: "", company: "District.", feedback: "We collaborated with Gurrumation Studio for motion graphics, and the results were fantastic. The visuals were modern, smooth, and highly engaging. Their team showed great creativity and professionalism throughout the project.", rating: 5 },
 ];
 
 const services = [
@@ -75,7 +74,7 @@ const services = [
         icon: `<svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="8" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="2" fill="currentColor"/><line x1="24" y1="6" x2="24" y2="14" stroke="currentColor" stroke-width="1.5"/><line x1="24" y1="34" x2="24" y2="42" stroke="currentColor" stroke-width="1.5"/><line x1="6" y1="24" x2="14" y2="24" stroke="currentColor" stroke-width="1.5"/><line x1="34" y1="24" x2="42" y2="24" stroke="currentColor" stroke-width="1.5"/></svg>`
     },
     {
-        title: "AI Automation", description: "Intelligent automation pipelines powered by AI — from auto-editing and scene detection to smart rendering and content generation.",
+        title: "AI ", description: "Intelligent automation pipelines powered by AI — from auto-editing and scene detection to smart rendering and content generation.",
         icon: `<svg viewBox="0 0 48 48" fill="none"><rect x="8" y="6" width="32" height="36" rx="3" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="20" r="6" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="20" r="2" fill="currentColor" opacity="0.6"/><path d="M14 32 L20 28 L28 34 L34 30" stroke="currentColor" stroke-width="2" fill="none"/><line x1="18" y1="10" x2="30" y2="10" stroke="currentColor" stroke-width="1.5" opacity="0.4"/></svg>`
     },
     {
@@ -96,7 +95,8 @@ const galleryImages = [
     "gallery/photo-5.jpg",
     "gallery/photo-6.jpg",
     "gallery/photo-7.jpg",
-    "gallery/photo-8.jpg"
+    "gallery/photo-8.jpg",
+    "gallery/Photo-9.jpeg"
 ];
 
 
