@@ -38,21 +38,21 @@ function preventVerticalTouchScroll(element) {
 
 // ─── Data ───────────────────────────────
 const projects = [
-    { id: 1, title: "", category: "Video Editing", description: "Professional video editing with cinematic pacing and seamless transitions.", thumbnail: "frames/1_0026 (Small).png", video: "Video Editing/VE1.mp4", tags: ["Premiere Pro", "DaVinci Resolve"] },
-    { id: 2, title: "", category: "Video Editing", description: "Dynamic video edit showcasing precision cuts and polished color grading.", thumbnail: "frames/1_0036 (Small).png", video: "Video Editing/VE2.mp4", tags: ["Premiere Pro", "After Effects"] },
-    { id: 3, title: "", category: "Video Editing", description: "Cinematic showreel capturing golden hour footage with precisely timed cuts and sound design.", thumbnail: "frames/1_0046 (Small).png", video: "Video Editing/VE3.mp4", tags: ["Premiere Pro", "After Effects"] },
-    { id: 4, title: "Dark Fantasy", category: "CGI / VFX", description: "A jaw-dropping dark fantasy CGI ad with photorealistic environments and cinematic lighting.", thumbnail: "frames/1_0056 (Small).png", video: "CGI ADS/Dark Fantasy.mp4", tags: ["Cinema 4D", "After Effects", "Octane Render"] },
-    { id: 5, title: "Mc Donalds Burger", category: "CGI / VFX", description: "Mouthwatering CGI product visualization for a burger commercial with realistic textures.", thumbnail: "frames/1_0066 (Small).png", video: "CGI ADS/Mc D Burger.mp4", tags: ["Cinema 4D", "Octane Render"] },
-    { id: 6, title: "Superdonuts Rakhi Special", category: "CGI / VFX", description: "Festive CGI advertisement for Superdonuts with vibrant visuals and celebration themes.", thumbnail: "frames/1_0070 (Small).png", video: "CGI ADS/Superdonuts Rakhi special.mp4", tags: ["Blender", "After Effects"] },
-    { id: 7, title: "Superdonuts", category: "CGI / VFX", description: "Premium CGI product ad showcasing delicious donuts with photorealistic detail.", thumbnail: "frames/1_0076 (Small).png", video: "CGI ADS/superdonuts.mp4", tags: ["Cinema 4D", "Octane Render"] },
-    { id: 8, title: "Villager Studio", category: "CGI / VFX", description: "Creative CGI ad production for Villager Studio with stunning visual effects.", thumbnail: "frames/1_0080 (Small).png", video: "CGI ADS/villager studio.mp4", tags: ["Houdini", "Nuke", "After Effects"] },
-    { id: 9, title: "Karan Aujla", category: "3D Animation", description: "High-energy 3D VFX reel with dynamic camera movements and photorealistic rendering.", thumbnail: "frames/1_0086 (Small).png", video: "3D VFX/aujla reel.mp4", tags: ["Blender", "Cinema 4D"] },
-    { id: 10, title: "Karan Aujla", category: "3D Animation", description: "Cinematic 3D VFX project with immersive storytelling and stunning visuals.", thumbnail: "frames/1_0090 (Small).png", video: "3D VFX/aujla.mp4", tags: ["Blender", "Unreal Engine"] },
-    { id: 11, title: "Jashan Dhanna", category: "3D Animation", description: "Spectacular 3D VFX production with advanced particle simulations and dynamic lighting.", thumbnail: "frames/1_0096 (Small).png", video: "3D VFX/jashan dhanna.MP4", tags: ["Cinema 4D", "After Effects"] },
-    { id: 12, title: "War Tkay", category: "3D Animation", description: "Action-packed 3D VFX sequence with explosive effects and cinematic composition.", thumbnail: "frames/1_0100 (Small).png", video: "3D VFX/war tkay.mp4", tags: ["Houdini", "Nuke"] },
-    { id: 13, title: "Starbucks", category: "Motion Graphics", description: "Dynamic motion graphics with sleek typography, infographics, and animated brand storytelling.", thumbnail: "frames/1_0030 (Small).png", video: "Motion Graphics/Video Project 5.mp4", tags: ["After Effects", "Premiere Pro"] },
-    { id: 14, title: "Priceless Joy", category: "AI Automation", description: "Cinematic, photorealistic AI-generated video featuring traditional Indian attire and stylized storytelling.", thumbnail: "frames/1_0040 (Small).png", video: "Video Editing/AI_Video_1.mp4", tags: ["Midjourney", "Runway Gen-2", "AI Video"] },
-    { id: 15, title: "AI Ekam Sudhar", category: "AI Automation", description: "A heartwarming paper-cutout style AI animation conveying that happiness doesn't always need a price tag.", thumbnail: "frames/1_0050 (Small).png", video: "Video Editing/AI_Video_2.mp4", tags: ["AI Animation", "Storytelling", "ComfyUI"] },
+    { id: 1, title: "", category: "Video Editing", description: "Professional video editing with cinematic pacing and seamless transitions.", thumbnail: "frames/1.png", video: "Video Editing/VE1.mp4", tags: ["Premiere Pro", "DaVinci Resolve"] },
+    { id: 2, title: "", category: "Video Editing", description: "Dynamic video edit showcasing precision cuts and polished color grading.", thumbnail: "frames/2.png", video: "Video Editing/VE2.mp4", tags: ["Premiere Pro", "After Effects"] },
+    { id: 3, title: "", category: "Video Editing", description: "Cinematic showreel capturing golden hour footage with precisely timed cuts and sound design.", thumbnail: "frames/3.png", video: "Video Editing/VE3.mp4", tags: ["Premiere Pro", "After Effects"] },
+    { id: 4, title: "Dark Fantasy", category: "CGI / VFX", description: "A jaw-dropping dark fantasy CGI ad with photorealistic environments and cinematic lighting.", thumbnail: "frames/4.png", video: "CGI ADS/Dark Fantasy.mp4", tags: ["Cinema 4D", "After Effects", "Octane Render"] },
+    { id: 5, title: "Mc Donalds Burger", category: "CGI / VFX", description: "Mouthwatering CGI product visualization for a burger commercial with realistic textures.", thumbnail: "frames/5.png", video: "CGI ADS/Mc D Burger.mp4", tags: ["Cinema 4D", "Octane Render"] },
+    { id: 6, title: "Superdonuts Rakhi Special", category: "CGI / VFX", description: "Festive CGI advertisement for Superdonuts with vibrant visuals and celebration themes.", thumbnail: "frames/6.png", video: "CGI ADS/Superdonuts Rakhi special.mp4", tags: ["Blender", "After Effects"] },
+    { id: 7, title: "Superdonuts", category: "CGI / VFX", description: "Premium CGI product ad showcasing delicious donuts with photorealistic detail.", thumbnail: "frames/7.png", video: "CGI ADS/superdonuts.mp4", tags: ["Cinema 4D", "Octane Render"] },
+    { id: 8, title: "Villager Studio", category: "CGI / VFX", description: "Creative CGI ad production for Villager Studio with stunning visual effects.", thumbnail: "frames/8.png", video: "CGI ADS/villager studio.mp4", tags: ["Houdini", "Nuke", "After Effects"] },
+    { id: 9, title: "Karan Aujla", category: "3D Animation", description: "High-energy 3D VFX reel with dynamic camera movements and photorealistic rendering.", thumbnail: "frames/9.png", video: "3D VFX/aujla reel.mp4", tags: ["Blender", "Cinema 4D"] },
+    { id: 10, title: "Karan Aujla", category: "3D Animation", description: "Cinematic 3D VFX project with immersive storytelling and stunning visuals.", thumbnail: "frames/10.png", video: "3D VFX/aujla.mp4", tags: ["Blender", "Unreal Engine"] },
+    { id: 11, title: "Jashan Dhanna", category: "3D Animation", description: "Spectacular 3D VFX production with advanced particle simulations and dynamic lighting.", thumbnail: "frames/11.png", video: "3D VFX/jashan dhanna.MP4", tags: ["Cinema 4D", "After Effects"] },
+    { id: 12, title: "War Tkay", category: "3D Animation", description: "Action-packed 3D VFX sequence with explosive effects and cinematic composition.", thumbnail: "frames/12.png", video: "3D VFX/war tkay.mp4", tags: ["Houdini", "Nuke"] },
+    { id: 13, title: "Starbucks", category: "Motion Graphics", description: "Dynamic motion graphics with sleek typography, infographics, and animated brand storytelling.", thumbnail: "frames/13.png", video: "Motion Graphics/Video Project 5.mp4", tags: ["After Effects", "Premiere Pro"] },
+    { id: 14, title: "Priceless Joy", category: "AI Automation", description: "Cinematic, photorealistic AI-generated video featuring traditional Indian attire and stylized storytelling.", thumbnail: "frames/14.png", video: "Video Editing/AI_Video_1.mp4", tags: ["Midjourney", "Runway Gen-2", "AI Video"] },
+    { id: 15, title: "AI Ekam Sudhar", category: "AI Automation", description: "A heartwarming paper-cutout style AI animation conveying that happiness doesn't always need a price tag.", thumbnail: "frames/15.png", video: "Video Editing/AI_Video_2.mp4", tags: ["AI Animation", "Storytelling", "ComfyUI"] },
     
 ];
 
@@ -234,9 +234,8 @@ function initHeroFrames() {
 
     // Build list of frame filenames — use the (Small) versions for better performance
     const frameFiles = [];
-    for (let i = 2; i <= 102; i += 2) {
-        const num = String(i).padStart(4, "0");
-        frameFiles.push(`frames/1_${num} (Small).png`);
+    for (let i = 1; i <= 32; i++) {
+        frameFiles.push(`frames/${i}.png`);
     }
     const TOTAL_FRAMES = frameFiles.length;
 
