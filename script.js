@@ -51,8 +51,8 @@ const projects = [
     { id: 11, title: "Jashan Dhanna", category: "3D Animation", description: "Spectacular 3D VFX production with advanced particle simulations and dynamic lighting.", thumbnail: "frames/11.png", video: "3D VFX/jashan dhanna.MP4", tags: ["Cinema 4D", "After Effects"] },
     { id: 12, title: "War Tkay", category: "3D Animation", description: "Action-packed 3D VFX sequence with explosive effects and cinematic composition.", thumbnail: "frames/12.png", video: "3D VFX/war tkay.mp4", tags: ["Houdini", "Nuke"] },
     { id: 13, title: "Starbucks", category: "Motion Graphics", description: "Dynamic motion graphics with sleek typography, infographics, and animated brand storytelling.", thumbnail: "frames/13.png", video: "Motion Graphics/Video Project 5.mp4", tags: ["After Effects", "Premiere Pro"] },
-    { id: 14, title: "Priceless Joy", category: "AI Automation", description: "Cinematic, photorealistic AI-generated video featuring traditional Indian attire and stylized storytelling.", thumbnail: "frames/14.png", video: "Video Editing/AI_Video_1.mp4", tags: ["Midjourney", "Runway Gen-2", "AI Video"] },
-    { id: 15, title: "AI Ekam Sudhar", category: "AI Automation", description: "A heartwarming paper-cutout style AI animation conveying that happiness doesn't always need a price tag.", thumbnail: "frames/15.png", video: "Video Editing/AI_Video_2.mp4", tags: ["AI Animation", "Storytelling", "ComfyUI"] },
+    { id: 14, title: "Priceless Joy", category: "AI" , description: "Cinematic, photorealistic AI-generated video featuring traditional Indian attire and stylized storytelling.", thumbnail: "frames/14.png", video: "Video Editing/AI_Video_1.mp4", tags: ["Midjourney", "Runway Gen-2", "AI Video"] },
+    { id: 15, title: "AI Ekam Sudhar", category: "AI", description: "A heartwarming paper-cutout style AI animation conveying that happiness doesn't always need a price tag.", thumbnail: "frames/15.png", video: "Video Editing/AI_Video_2.mp4", tags: ["AI Animation", "Storytelling", "ComfyUI"] },
     
 ];
 
