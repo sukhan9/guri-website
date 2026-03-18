@@ -92,11 +92,7 @@ const galleryImages = [
     "gallery/photo-2.jpg",
     "gallery/photo-3.jpg",
     "gallery/photo-4.jpg",
-    "gallery/photo-5.jpg",
-    "gallery/photo-6.jpg",
-    "gallery/photo-7.jpg",
-    "gallery/photo-8.jpg",
-    "gallery/Photo-9.jpeg"
+    "gallery/photo-5.jpg"
 ];
 
 
